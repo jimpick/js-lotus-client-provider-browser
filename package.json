@@ -16,8 +16,7 @@
   },
   "standard": {
     "globals": [
-      "WebSocket",
-      "fetch"
+      "globalThis"
     ]
   },
   "repository": {
