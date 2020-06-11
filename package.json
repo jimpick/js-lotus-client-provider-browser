@@ -21,11 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/filecoin-shipyard/lotus-client-provider-browser.git"
+    "url": "git+https://github.com/filecoin-shipyard/js-lotus-client-provider-browser.git"
   },
   "bugs": {
-    "url": "https://github.com/filecoin-shipyard/lotus-client-provider-browser/issues"
+    "url": "https://github.com/filecoin-shipyard/js-lotus-client-provider-browser/issues"
   },
-  "homepage": "https://github.com/filecoin-shipyard/lotus-client-provider-browser#readme",
+  "homepage": "https://github.com/filecoin-shipyard/js-lotus-client-provider-browser#readme",
   "description": "Lotus JS Client Web Browser Provider module"
 }
