@@ -1,16 +1,16 @@
 {
-  "name": "@jimpick/lotus-client-provider-browser",
-  "version": "0.0.7",
+  "name": "@filecoin-shipyard/lotus-client-provider-browser",
+  "version": "0.0.8",
   "scripts": {
     "lint": "standard",
     "test": "npm run lint",
-    "dual-publish": "dual-publish"
+    "dual-publish": "release-it --no-npm.publish && dual-publish"
   },
   "keywords": [],
   "author": "Jim Pick (@jimpick)",
   "license": "(Apache-2.0 AND MIT)",
   "devDependencies": {
-    "dual-publish": "^0.10.2",
+    "@jimpick/dual-publish": "^0.10.2",
     "standard": "^14.3.3"
   },
   "standard": {
