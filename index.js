@@ -21,7 +21,7 @@ class BrowserProvider {
       }
     }
     this.WebSocket = options.WebSocket || globalThis.WebSocket
-    this.fetch = options.fetch || globalThis.fetch
+    this.fetch = options.fetch || globalThis.fetch.bind(globalThis)
   }
 
   connect () {
