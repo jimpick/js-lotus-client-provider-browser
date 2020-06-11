@@ -1,6 +1,6 @@
 {
   "name": "@jimpick/lotus-client-provider-browser",
-  "version": "0.0.7",
+  "version": "0.0.7-1",
   "scripts": {
     "lint": "standard",
     "test": "npm run lint",
@@ -15,8 +15,7 @@
   },
   "standard": {
     "globals": [
-      "WebSocket",
-      "fetch"
+      "globalThis"
     ]
   },
   "repository": {

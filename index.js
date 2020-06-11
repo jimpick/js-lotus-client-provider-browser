@@ -20,6 +20,8 @@ class BrowserProvider {
         this.url += `?token=${this.token}`
       }
     }
+    this.WebSocket = options.WebSocket || globalThis.WebSocket
+    this.fetch = options.fetch || globalThis.fetch
   }
 
   connect () {
@@ -27,7 +29,7 @@ class BrowserProvider {
       const getConnectPromise = () => {
         return new Promise((resolve, reject) => {
           if (this.transport !== 'ws') return resolve()
-          this.ws = new WebSocket(this.url)
+          this.ws = new this.WebSocket(this.url)
           // FIXME: reject on error or timeout
           this.ws.onopen = function () {
             resolve()
@@ -77,7 +79,7 @@ class BrowserProvider {
     if (this.token) {
       headers.Authorization = `Bearer ${this.token}`
     }
-    const response = await fetch(this.httpUrl, {
+    const response = await this.fetch(this.httpUrl, {
       method: 'POST',
       headers,
       body: JSON.stringify(jsonRpcRequest)
@@ -223,7 +225,7 @@ class BrowserProvider {
       Accept: '*/*',
       Authorization: `Bearer ${this.token}`
     }
-    const response = await fetch(this.importUrl, {
+    const response = await this.fetch(this.importUrl, {
       method: 'PUT',
       headers,
       body
