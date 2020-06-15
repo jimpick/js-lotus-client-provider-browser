@@ -218,7 +218,7 @@ class BrowserProvider {
     }
   }
 
-  async import (body) {
+  async importFile (body) {
     await this.connect()
     const headers = {
       'Content-Type': body.type,
