@@ -20,6 +20,7 @@ class BrowserProvider {
         this.url += `?token=${this.token}`
       }
     }
+    this.authorizationHeader = options.authorizationHeader
     this.WebSocket = options.WebSocket || globalThis.WebSocket
     this.fetch = options.fetch || globalThis.fetch.bind(globalThis)
   }
@@ -76,7 +77,9 @@ class BrowserProvider {
       'Content-Type': 'text/plain;charset=UTF-8',
       Accept: '*/*'
     }
-    if (this.token) {
+    if (this.authorizationHeader) {
+      headers.Authorization = this.authorizationHeader
+    } else if (this.token) {
       headers.Authorization = `Bearer ${this.token}`
     }
     const response = await this.fetch(this.httpUrl, {
